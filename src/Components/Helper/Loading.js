@@ -7,6 +7,7 @@ const Loading = () => {
     function updateStep() {
       setStep(() => {
         if (step < 3) return step + 1;
+        if (step === 3) return step - 3;
       });
     }
     const interval = setInterval(updateStep, 300);
