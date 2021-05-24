@@ -12,7 +12,7 @@ const LoginForm = () => {
   const username = UseForm();
   const password = UseForm();
 
-  const { userLogin, error, loading, login } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
