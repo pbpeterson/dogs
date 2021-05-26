@@ -7,16 +7,19 @@ const UserStatsGraphs = ({ data }) => {
   const [total, setTotal] = React.useState(0);
 
   React.useEffect(() => {
-    const graphData = data.map((item) => {
-      return {
-        x: item.title,
-        y: Number(item.acessos),
-      };
-    });
-    setGraph(graphData);
-    setTotal(
-      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b),
-    );
+    if (data.length !== 0) {
+      console.log(data);
+      const graphData = data.map((item) => {
+        return {
+          x: item.title,
+          y: Number(item.acessos),
+        };
+      });
+      setGraph(graphData);
+      setTotal(
+        data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b),
+      );
+    }
   }, [data]);
   return (
     <section className={` ${styles.graphs} animeLeft`}>
